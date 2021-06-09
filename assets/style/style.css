@@ -944,11 +944,45 @@ header, main, #page,
     width: 140%;
     margin-left: -20%;
   }
-  footer #contact {
-    height: 60%;
-  }
   footer small {
     width: 250px;
+  }
+  main #about, main #work {
+    padding-top: 30px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  h2 {
+    margin-bottom: 20px;
+  }
+  main #about #aboutText p {
+    font-size: .95em;
+  }
+  footer #contact {
+    height: 70%;
+  }
+  footer #socialResponsive {
+    bottom: 45px;
+  }
+}
+
+@media screen and (max-height: 640px) {
+  header, main #about, main #work, footer {
+    min-height: 110vh;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  header, main #about, main #work, footer {
+    min-height: 120vh;
+  }
+  footer #contact .contactText a {
+    width: 120%;
+    margin-left: -10%;
+  }
+  footer #socialResponsive {
+    width: 170px;
   }
 }
 /*# sourceMappingURL=style.css.map */
