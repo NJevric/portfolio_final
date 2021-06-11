@@ -166,7 +166,7 @@ window.onload=function(){
       document.getElementById(objLoadAnimacija.footer).style.opacity = objLoadAnimacija.opacityValue;  
       document.getElementById('load').style.display = 'none';  
 
-    },0);
+    },1800);
 
       }
       a(0);
