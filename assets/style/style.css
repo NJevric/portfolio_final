@@ -140,7 +140,7 @@ header nav .big .link .navLinkBorder {
   margin-top: 5px;
   width: 0%;
   height: 3px;
-  background-color: #fc052a;
+  background-color: #04d9ff;
   border-radius: 5px;
   -webkit-transition: .5s ease;
   transition: .5s ease;
@@ -168,6 +168,7 @@ header nav .small .navIco {
   right: 10px;
   z-index: 1000;
   display: none;
+  background-color: #0b0837;
   padding: 5px;
 }
 
@@ -216,20 +217,31 @@ header #headline p {
   font-weight: 600;
 }
 
-header #headline a {
+header #headline #buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header #headline #buttons a {
   color: #fff;
   padding: 20px 20px;
   font-size: 1.1em;
   font-weight: 600;
   text-decoration: none;
-  border: 3px solid #fc052a;
+  border: 3px solid #04d9ff;
   -webkit-transition: .5s ease;
   transition: .5s ease;
+  text-align: center;
 }
 
-header #headline a:hover {
-  background-color: rgba(252, 5, 42, 0.6);
+header #headline #buttons a:hover {
+  background-color: rgba(4, 217, 255, 0.6);
   border: 3px solid rgba(0, 0, 0, 0);
+}
+
+header #headline #buttons .button:nth-of-type(1) {
+  margin-right: 10px;
 }
 
 main {
@@ -242,60 +254,65 @@ main #about, main #work {
   width: 70%;
   margin: 0px auto;
   min-height: 100vh;
+  border-radius: 5px;
 }
 
 main #about {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-main #about #aboutText {
-  width: 45%;
   color: #333;
 }
 
-main #about #aboutText p {
+main #about p {
+  width: 80%;
   font-size: 1.15em;
-  width: 120%;
   text-align: justify;
+  margin-bottom: 10px;
 }
 
-main #about #aboutText p:last-of-type {
+main #about #lists {
+  width: 80%;
   margin-top: 20px;
-}
-
-main #about #aboutText .lista {
-  font-weight: 600;
-  font-size: 1.15em;
-}
-
-main #about #aboutText .lista ul {
-  margin-top: 20px;
-}
-
-main #about #aboutText .lista ul li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  font-size: 1.1em;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
-main #about #aboutText .lista ul li .techIconList {
-  width: 10px;
-  height: 10px;
+main #about #lists p {
+  font-size: 1.15em;
+  width: 100%;
+  text-align: center;
+  padding-left: 5px;
+  border-left: 5px solid #04d9ff;
+}
+
+main #about #lists .technologies {
+  margin-right: 50px;
+}
+
+main #about #lists .technologies, main #about #lists .architectures {
+  font-weight: 600;
+  font-size: 1.1em;
+  border-radius: 5px;
+}
+
+main #about #lists .technologies ul, main #about #lists .architectures ul {
+  margin-top: 20px;
+}
+
+main #about #lists .technologies ul li, main #about #lists .architectures ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main #about #lists .technologies ul li .techIconList, main #about #lists .architectures ul li .techIconList {
+  width: 8px;
+  height: 8px;
   border-radius: 100%;
   background-color: #333;
   margin-right: 20px;
   margin-top: 9px;
-}
-
-main #about img {
-  margin-top: 200px;
-  height: 500px;
 }
 
 main #work {
@@ -310,7 +327,7 @@ main #work {
 main #work h2 {
   text-align: center;
   color: #f3f3f3;
-  margin-bottom: 0px;
+  margin-bottom: 20px;
 }
 
 main #work #projects {
@@ -337,9 +354,13 @@ main #work #projects .project {
 }
 
 main #work #projects .project:hover {
-  border-radius: 5px;
   -webkit-transform: scale(1.03);
           transform: scale(1.03);
+}
+
+main #work #projects .project:hover .slika img {
+  -webkit-filter: grayscale(0%);
+          filter: grayscale(0%);
 }
 
 main #work #projects .project:nth-of-type(2n) {
@@ -362,11 +383,17 @@ main #work #projects .project .slika {
   width: 50%;
   margin-right: 50px;
   position: relative;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
 }
 
 main #work #projects .project .slika img {
   width: 100%;
   border-radius: 5px;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
 }
 
 main #work #projects .project .slika a {
@@ -377,6 +404,56 @@ main #work #projects .project .slika a {
   height: 100%;
   -webkit-transition: .5s ease;
   transition: .5s ease;
+}
+
+main #work #projects .project .slika .projekatTekstReponsive {
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+  display: none;
+}
+
+main #work #projects .project .slika .projekatTekstReponsive h4 {
+  text-transform: uppercase;
+  margin-top: 10px;
+  text-align: left;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+  color: #22A7F0;
+}
+
+main #work #projects .project .slika .projekatTekstReponsive p {
+  font-size: .9em;
+  padding: 10px 0px;
+}
+
+main #work #projects .project .slika .projekatTekstReponsive ul {
+  font-weight: 400;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main #work #projects .project .slika .projekatTekstReponsive ul li {
+  margin-right: 10px;
+  color: #22A7F0;
+}
+
+main #work #projects .project .slika .projekatTekstReponsive .linkoviResponsive a {
+  text-decoration: none;
+  border-bottom: 2px solid #22A7F0;
+  color: rgba(34, 167, 240, 0.65);
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+}
+
+main #work #projects .project .slika .projekatTekstReponsive .linkoviResponsive a:nth-of-type(1) {
+  margin-right: 25px;
+}
+
+main #work #projects .project .slika .projekatTekstReponsive .linkoviResponsive a:hover {
+  color: #22a7f0;
 }
 
 main #work #projects .project .projekatTekst {
@@ -400,6 +477,8 @@ main #work #projects .project .projekatTekst ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 main #work #projects .project .projekatTekst ul li {
@@ -449,6 +528,7 @@ footer #contact {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  border-radius: 5px;
 }
 
 footer #contact .contactText {
@@ -483,7 +563,7 @@ footer #contact .contactText a {
   font-weight: 600;
   text-decoration: none;
   border-radius: 2px;
-  border: 3px solid #ed213a;
+  border: 3px solid #04d9ff;
   -webkit-transition: .5s ease;
   transition: .5s ease;
 }
@@ -492,7 +572,7 @@ footer #contact .contactText a:hover {
   -webkit-transition: .5s ease;
   transition: .5s ease;
   border: 3px solid rgba(0, 0, 0, 0);
-  background-color: rgba(237, 33, 58, 0.7);
+  background-color: rgba(4, 217, 255, 0.7);
   color: #fff;
 }
 
@@ -690,6 +770,16 @@ header, main, #page,
   }
 }
 
+@media screen and (max-width: 1536px) {
+  main #about p, main #about #lists {
+    width: 100%;
+    font-size: 1em;
+  }
+  main #about #lists .technologies, main #about #lists .architectures {
+    font-size: 1em;
+  }
+}
+
 @media screen and (max-width: 1440px) {
   footer #contact .contactText h2, h2 {
     font-size: 3em;
@@ -698,10 +788,6 @@ header, main, #page,
     color: #fff;
     padding: 20px;
     font-size: 1em;
-  }
-  main #about img {
-    margin-top: 150px;
-    height: 400px;
   }
 }
 
@@ -713,11 +799,7 @@ header, main, #page,
     font-size: 1.1em;
     font-weight: 600;
   }
-  main #about img {
-    margin-top: 200px;
-    height: 350px;
-  }
-  main #about #aboutText .lista ul li {
+  main #about #aboutText .technologies ul li, main #about #aboutText .architectures ul li {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -752,12 +834,23 @@ header, main, #page,
   #about p {
     width: 100%;
   }
-  main #about img {
-    margin-top: 550px;
+  main #about #lists .technologies {
+    margin-bottom: 40px;
+    margin-right: 0px;
   }
 }
 
 @media screen and (max-width: 768px) {
+  footer #contact .contactText h2, h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+  main #about #lists .technologies {
+    margin-bottom: 20px;
+  }
+  main #about #lists p {
+    font-size: 1em;
+  }
   header nav #logo img {
     width: 40px;
   }
@@ -858,7 +951,7 @@ header, main, #page,
 
 @media screen and (max-width: 540px) {
   #about {
-    padding-top: 40px !important;
+    padding: 40px 0px !important;
   }
   header #headline {
     width: 80%;
@@ -885,17 +978,14 @@ header, main, #page,
     padding: 15px;
     font-size: .95em;
   }
-  main #about #aboutText .lista {
+  main #about #aboutText .technologies, main #about #aboutText .architectures ul li {
     font-size: 1em;
   }
-}
-
-@media screen and (max-width: 414px) {
-  ::-webkit-scrollbar {
-    display: none;
+  main #about #lists p {
+    text-align: left;
   }
   main #work #projects .project {
-    padding: 10px 0px;
+    padding: 0px;
   }
   main #work #projects .project:nth-of-type(2n) {
     -webkit-box-orient: horizontal;
@@ -914,19 +1004,63 @@ header, main, #page,
   main #work #projects .project .slika {
     width: 85%;
     margin: 0px auto;
+    -webkit-transition: .5s ease;
+    transition: .5s ease;
+    padding-bottom: 10px;
   }
   main #work #projects .project .slika a {
     display: none;
   }
+  main #work #projects .project .slika .linkoviResponsive {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 10px 0px;
+    width: 100%;
+  }
+  main #work #projects .project .slika .linkoviResponsive a {
+    display: block;
+    position: static;
+    font-size: .9em;
+    color: #F2F1EF;
+  }
+  main #work #projects .project .slika .linkoviResponsive a:nth-of-type(1) {
+    margin-right: 10px;
+  }
   main #work #projects .project .slika img {
     border-radius: 0px;
+    -webkit-transition: .3s ease;
+    transition: .3s ease;
+  }
+  main #work #projects .project .slika:hover {
+    margin-top: 30px;
+  }
+  main #work #projects .project .slika:hover .projekatTekstReponsive {
+    display: block;
   }
   main #work #projects .project .projekatTekst {
     display: none;
+    position: absolute;
+    top: 10px;
+    left: 7.5%;
+    width: 85%;
+    background-color: #333;
   }
   main #about #aboutText p {
     font-size: 1em;
     width: 95%;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  header #headline h1 {
+    font-size: 2.7em;
+  }
+  #page {
+    display: none;
+  }
+  ::-webkit-scrollbar {
+    display: none;
   }
   footer #contact .contactText h2, h2 {
     font-size: 2.5em;
@@ -950,9 +1084,18 @@ header, main, #page,
   main #about, main #work {
     padding-top: 30px;
   }
+  header #headline #buttons .button {
+    width: 40%;
+    font-size: .85em;
+    padding: 20px 10px;
+  }
 }
 
 @media screen and (max-width: 375px) {
+  header #headline #buttons .button {
+    font-size: .8em;
+    padding: 15px 5px;
+  }
   h2 {
     margin-bottom: 20px;
   }
@@ -974,6 +1117,9 @@ header, main, #page,
 }
 
 @media screen and (max-width: 320px) {
+  header #headline h1 {
+    font-size: 2.4em;
+  }
   header, main #about, main #work, footer {
     min-height: 120vh;
   }

@@ -117,15 +117,13 @@ header{
                     .navLinkBorder{
                         width: 60%;
                     }
-                    a{
-            
-                    }
+                   
                 }
                 .navLinkBorder{
                     margin-top: 5px;
                     width: 0%;
                     height: 3px;
-                    background-color: #fc052a;
+                    background-color: #04d9ff;
                     border-radius: 5px;
                     transition:.5s ease;
                 }
@@ -153,7 +151,7 @@ header{
                 right: 10px;
                 z-index:1000;
                 display:none;
-                // background-color:#0b0837;
+                background-color:#0b0837;
                
                 padding:5px;
             }
@@ -165,9 +163,7 @@ header{
                             width: 60%;
                            
                         }
-                        a{
-                
-                        }
+                        
                     }
                     .navLinkBorder{
                         
@@ -208,20 +204,28 @@ header{
             font-size:1.2em;
             font-weight: 600; 
         }
-        a{
-            color:#fff;
-            padding:20px 20px;
-            font-size:1.1em;
-            font-weight: 600;
-            text-decoration: none;
-            border:3px solid #fc052a;
-            transition:.5s ease;
-            
-            &:hover{
-                background-color:rgba($color: #fc052a, $alpha: .6);
-                border:3px solid rgba(0,0,0,0.0); 
+        #buttons{
+            display: flex;
+            a{
+                color:#fff;
+                padding:20px 20px;
+                font-size:1.1em;
+                font-weight: 600;
+                text-decoration: none;
+                // border:3px solid #fc052a;
+                border:3px solid #04d9ff;
+                transition:.5s ease;
+                text-align: center;
+                &:hover{
+                    background-color:rgba($color: #04d9ff, $alpha: .6);
+                    border:3px solid rgba(0,0,0,0.0); 
+                }
+            }
+            .button:nth-of-type(1){
+                margin-right: 10px;
             }
         }
+       
     }
 }
 main{
@@ -232,51 +236,54 @@ main{
         width:70%;
         margin:0px auto;
         min-height: $visina;
+        border-radius: 5px;
     }
     #about{
         
-        display: flex;
-        justify-content: space-between;
-   
-        #aboutText{
-            width:45%;
-            color:#333;
+        color:#333;
+        p{
+            width: 80%;
+            font-size:1.15em;
+            text-align: justify;
+            margin-bottom: 10px;
+        }
+        #lists{
+            width: 80%;
+            margin-top:20px;
+            display: flex;
+            flex-wrap: wrap;
             p{
                 font-size:1.15em;
-                width:120%;
-                text-align: justify;
-         
-                
-                &:last-of-type{
-                    margin-top: 20px;
-                }
+                width: 100%;
+                text-align: center;
+                padding-left: 5px;
+                border-left: 5px solid #04d9ff;
             }
-            .lista{
+            .technologies{
+                margin-right: 50px;
+            }
+            .technologies,.architectures{
                 font-weight: 600;
-                font-size:1.15em;
-               ul{
-                   
+                font-size:1.1em;
+                border-radius: 5px;
+                ul{
                     margin-top:20px;
-                    
                     li{
                         display: flex;
-                        font-size: 1.1em;
                         .techIconList{
-                            width:10px;
-                            height: 10px;
+                            width:8px;
+                            height: 8px;
                             border-radius: 100%;
                             background-color: #333;
                             margin-right: 20px;
                             margin-top: 9px;
                         }
                     }
-               }
+                }
             }
         }
-        img{
-            margin-top: 200px;
-            height: 500px;
-        }
+        
+    
     }
     #work{
         background-image:linear-gradient(#0a021d,#23153c) ;
@@ -287,25 +294,27 @@ main{
         h2{
             text-align: center;
             color: #f3f3f3;
-            margin-bottom: 0px;
+            margin-bottom: 20px;
         }
         #projects{
             color: #f3f3f3;
             height: 90vh;
             padding:0px 50px;
             overflow: scroll;
-           
             .project{
-                
                 padding:60px 0px;
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
                 transition:.5s ease;
                 &:hover{
-                    border-radius: 5px;
-                 
                     transform: scale(1.03);
+                    .slika{
+                        img{
+                            filter: grayscale(0%);
+                        }
+                    }
+                    
                 }
                 &:nth-of-type(2n){
                     flex-direction: row-reverse;
@@ -321,9 +330,13 @@ main{
                     width: 50%;
                     margin-right: 50px;
                     position: relative;
+                    transition: .5s ease;
+                    
                     img{
                         width: 100%;
                         border-radius: 5px;
+                        filter: grayscale(100%);
+                        transition: .5s ease;
                     }
                     a{
                         position: absolute;
@@ -332,6 +345,50 @@ main{
                         width:100%;
                         height:100%;
                         transition: .5s ease;
+                    }
+                    .projekatTekstReponsive{
+                        transition: .5s ease;
+                        display: none;
+                        
+                        h4{
+                            text-transform: uppercase;
+                            margin-top: 10px;
+                            text-align: left;
+                            font-size: 1.2em;
+                            letter-spacing: 1px;
+                            color:#22A7F0;
+                        }
+                        p{
+                           
+                            font-size: .9em;
+                            padding:10px 0px;
+                        }
+                        ul{
+                            font-weight: 400;
+                            display: flex;
+                  
+                            flex-wrap: wrap;
+                            li{
+                                margin-right: 10px;
+                                color:#22A7F0;
+                            }
+                        }
+                        .linkoviResponsive{
+                            
+                            a{
+                                text-decoration: none;
+                                border-bottom: 2px solid#22A7F0;
+                                color: rgba($color: #22a7f0, $alpha: .65);
+                                transition: .5s ease;
+                                &:nth-of-type(1){
+                                    margin-right: 25px;
+                                }
+                                &:hover{
+                                    color: rgba($color: #22a7f0, $alpha: 1);
+                                }
+                            }
+                          
+                        }
                     }
                 }
                 .projekatTekst{
@@ -349,6 +406,7 @@ main{
                     ul{
                         font-weight: 600;
                         display: flex;
+                        flex-wrap: wrap;
                         li{
                             margin-right: 15px;
                         }
@@ -395,6 +453,7 @@ footer{
         top:50%;
         left:50%;
         transform: translate(-50%,-50%);
+        border-radius: 5px;
         .contactText{
             position: absolute;
             top:45%;
@@ -424,13 +483,13 @@ footer{
                 font-weight: 600;
                 text-decoration: none;
                 border-radius: 2px;
-                border:3px solid #ed213a;
+                border:3px solid #04d9ff;
                 transition:.5s ease;
                     
                 &:hover{
                     transition: .5s ease;
                     border:3px solid rgba(0,0,0,0.0);
-                    background-color: rgba($color: #ED213A, $alpha: .7);
+                    background-color: rgba($color: #04d9ff, $alpha: .7);
                     color:#fff;
                     
                 }
@@ -566,6 +625,16 @@ header,main,#page,
         transform: rotate(-360deg);
     }
 }
+@media screen and (max-width:1536px){
+    main #about p,main #about #lists{
+        width: 100%;
+        font-size: 1em;
+    }
+    main #about #lists .technologies, main #about #lists .architectures {
+        font-size: 1em;
+    }
+    
+}
 @media screen and (max-width:1440px){
 
     footer #contact .contactText h2,h2 {
@@ -577,10 +646,6 @@ header,main,#page,
         font-size: 1em;
         
     }
-    main #about img {
-        margin-top: 150px;
-        height: 400px;
-    }
 }
 @media screen and (max-width:1280px){
     header #headline h1 {
@@ -591,12 +656,8 @@ header,main,#page,
         font-size: 1.1em;
         font-weight: 600;
     }
-    
-    main #about img {
-        margin-top: 200px;
-        height: 350px;
-    }
-    main #about #aboutText .lista ul li {
+  
+    main #about #aboutText .technologies ul li ,main #about #aboutText .architectures ul li{
      
         display: flex;
         font-size: 1em;
@@ -631,12 +692,24 @@ header,main,#page,
             width:100%;
         }
     }
-    main #about img {
-        margin-top: 550px;
+    main #about #lists .technologies {
+        margin-bottom: 40px;
+        margin-right: 0px;
     }
        
 }
 @media screen and (max-width:768px){
+    footer #contact .contactText h2, h2 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+    }
+    main #about #lists .technologies {
+        margin-bottom: 20px;
+     
+    }
+    main #about #lists p {
+        font-size: 1em;
+    }
     header nav #logo img {
         width: 40px;
     }
@@ -746,7 +819,7 @@ header,main,#page,
 @media screen and (max-width:540px){
     
     #about {
-        padding-top: 40px !important;
+        padding: 40px 0px!important;
     }
     header #headline {
        
@@ -778,19 +851,15 @@ header,main,#page,
         font-size: .95em;
         
     }
-    main #about #aboutText .lista {
+    main #about #aboutText .technologies,main #about #aboutText .architectures ul li {
        
         font-size: 1em;
     }
-}
-@media screen and (max-width:414px){
-    ::-webkit-scrollbar {
-      
-        display: none;
+    main #about #lists p {
+       text-align: left;
     }
     main #work #projects .project {
-       
-        padding: 10px 0px;
+        padding:0px;
         &:nth-of-type(2n){
             flex-direction: row;
             .slika{
@@ -808,21 +877,71 @@ header,main,#page,
     main #work #projects .project .slika {
         width: 85%;
         margin:0px auto;
+        transition: .5s ease;
+        padding-bottom: 10px;
+        
         a{
             display: none;
         }
+        .linkoviResponsive{
+            display: flex;
+            padding:10px 0px;
+            width: 100%;
+            
+            a{
+                display: block;
+                position: static;
+                font-size: .9em;
+                color:#F2F1EF;
+                &:nth-of-type(1){
+                    margin-right: 10px;
+                }
+            }
+        }
         img{
             border-radius: 0px;
+            transition: .3s ease;
+            
+        }
+        &:hover{
+           margin-top: 30px; 
+           .projekatTekstReponsive{
+               display: block;
+           }
         }
         
     }
+  
+    
+  
+    
     main #work #projects .project .projekatTekst {
         display: none;
+        position: absolute;
+        top:10px;
+        left:7.5%;
+        width: 85%;
+        background-color: #333;
+        // width: 100%;
     }
     main #about #aboutText p {
         font-size: 1em;
         width: 95%;
     }
+}
+@media screen and (max-width:414px){
+    header #headline h1 {
+        font-size: 2.7em;
+    }
+    #page{
+        display: none;
+    }
+    ::-webkit-scrollbar {
+      
+        display: none;
+    }
+   
+   
     footer #contact .contactText h2, h2 {
         font-size: 2.5em;
     }
@@ -849,8 +968,19 @@ header,main,#page,
         padding-top: 30px;
        
     }
+    header #headline #buttons .button{
+        width: 40%;
+        font-size: .85em;
+        padding:20px 10px;
+       
+    }
 }
 @media screen and (max-width:375px){
+    header #headline #buttons .button{
+        font-size: .8em;
+        padding:15px 5px;
+       
+    }
     h2{
         margin-bottom: 20px;
     }
@@ -870,6 +1000,9 @@ header,main,#page,
     }
 }
 @media screen and (max-width:320px){
+    header #headline h1 {
+        font-size: 2.4em;
+    }
     header,main #about,main #work,footer{
         min-height: 120vh;
     }

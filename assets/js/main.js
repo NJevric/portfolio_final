@@ -4,8 +4,17 @@ window.onload=function(){
 
       loadAnimacija();
       navigacija();
+      myKnowledge(
+        ['HTML / Bootstrap', 'CSS / Sass', 'Javascript(ES6)/ jQuery / Angular', 'PHP / Laravel', 'SQL, MySQL', 'ASP.NET'],
+        '<p>Here are a few technologies of my expertise:</p>',
+        '.technologies'
+      );
+      myKnowledge(
+        ['MVC','3-Tier Architecture','Onion Architecture'],
+        '<p>Some of the architectures I am familiar with:</p>',
+        '.architectures'
+      );
       projekti();
-      jezici();
       socials();
       page();
 
@@ -234,7 +243,7 @@ window.onload=function(){
 
         if ($(window).width() <= 768) {
           var linkovi = document.querySelectorAll('.link');
-          console.log(linkovi);
+          // console.log(linkovi);
           linkovi.forEach(link => {
             link.addEventListener('click',() => {
               // e.preventDefault();
@@ -264,20 +273,84 @@ window.onload=function(){
   let projekti = () => {
     try{
   
-      let projekat = [{
-        id: 2,
-        src: 'assets/img/projekti/urbanInfo1.png',
-        alt: 'Urban Info',
-        naslov: 'Urban Info',
-        desc: 'Used Teleport public API for searching and displaying info about the cities and quality of life among them',
-        tech: ['Bootstrap','Javascript','jQuery'],
+      let projekat = [
+        {
+          id: 1,
+          src: 'assets/img/projekti/portfolio1.png',
+          alt: 'Portfolio First Version',
+          naslov: 'Portfolio 1st v.',
+          desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat doloribus neque pariatur.',
+          tech: ['HTML','Sass','XML'],
+          links: {
+            domain: 'https://njevric.github.io/portfolio1/',
+            code: 'https://github.com/NJevric/portfolio1'
+          }
+        },
+        {
+          id: 2,
+          src: 'assets/img/projekti/galaxy.png',
+          alt: 'The Evolution of S',
+          naslov: 'The Evolution of S',
+          desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat doloribus neque pariatur.',
+          tech: ['Bootstrap'],
+          links: {
+            domain: 'https://njevric.github.io/galaxy-telefoni/index.html',
+            code: 'https://github.com/NJevric/galaxy-telefoni'
+          }
+        },
+        {
+          id: 3,
+          src: 'assets/img/projekti/blizu.png',
+          alt: 'Blizu Restobar',
+          naslov: 'Blizu Restobar',
+          desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat doloribus neque pariatur.',
+          tech: ['Bootstrap','PHP'],
+          links: {
+            domain: 'http://blizu.rs/',
+            // code: 'www.cao1.com'
+          }
+        },
+        {
+          id: 4,
+          src: 'assets/img/projekti/skver44.png',
+          alt: 'Skver 44',
+          naslov: 'Skver 44',
+          desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat doloribus neque pariatur.',
+          tech: ['Bootstrap','PHP'],
+          links: {
+            domain: 'http://skver44.rs/',
+            // code: 'www.cao1.com'
+          }
+        },
+        
+        {
+          id: 5,
+          src: 'assets/img/projekti/fashionx.png',
+          alt: 'FashionX Web Shop',
+          naslov: 'FashionX Web Shop',
+          desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat doloribus neque pariatur.',
+          tech: ['Bootstrap','Javascript','AJAX'],
+          links: {
+            domain: 'https://njevric.github.io/fashionx/',
+            code: 'https://github.com/NJevric/fashionx'
+          }
+        },
+      
+      {
+        id: 6,
+        src: 'assets/img/projekti/tech.png',
+        alt: 'The Tech News',
+        naslov: 'The Tech News Blog',
+        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat doloribus neque pariatur.',
+        tech: ['Bootstrap','Javascript','MySQL','PHP'],
         links: {
-          domain: 'https://njevric.github.io/urban-info',
-          code: 'https://github.com/NJevric/urban-info'
+          domain: 'http://www.the-tech-news.epizy.com/cms/index.php',
+          code: 'https://github.com/NJevric/tech-news'
         }
       },
+      
       {
-        id: 1,
+        id: 7,
         src: 'assets/img/projekti/csa.png',
         alt: 'CSA Sports Management',
         naslov: 'CSA Sports Management',
@@ -289,125 +362,105 @@ window.onload=function(){
         }
       },
       {
-        id: 2,
-        src: 'assets/img/projekti/tech.png',
-        alt: 'The Tech News',
-        naslov: 'The Tech News Blog',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat doloribus neque pariatur.',
-        tech: ['Bootstrap','Javascript','MySQL','PHP'],
+        id: 8,
+        src: 'assets/img/projekti/urbanInfo1.png',
+        alt: 'Urban Info',
+        naslov: 'Urban Info',
+        desc: 'Used Teleport public API for searching and displaying info about the cities and quality of life among them',
+        tech: ['Bootstrap','Javascript','jQuery','AJAX'],
         links: {
-          domain: 'http://www.the-tech-news.epizy.com/cms/index.php',
-          code: 'https://github.com/NJevric/tech-news'
+          domain: 'https://njevric.github.io/urban-info',
+          code: 'https://github.com/NJevric/urban-info'
         }
       },
       {
-        id: 3,
-        src: 'assets/img/projekti/fashionx.png',
-        alt: 'FashionX Web Shop',
-        naslov: 'FashionX Web Shop',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat doloribus neque pariatur.',
-        tech: ['Bootstrap','Javascript','AJAX'],
+        id: 9,
+        src: 'assets/img/projekti/nikola_cinema.png',
+        alt: 'Nikola Cinema',
+        naslov: 'Nikola Cinema',
+        desc: 'Used Teleport public API for searching and displaying info about the cities and quality of life among them',
+        tech: ['HTML','CSS','Javascript','jQuery','AJAX','JSON'],
         links: {
-          domain: 'https://njevric.github.io/fashionx/',
-          code: 'https://github.com/NJevric/fashionx'
+          domain: 'https://njevric.github.io/urban-info',
+          code: 'https://github.com/NJevric/urban-info'
         }
       },
       {
-        id: 4,
-        src: 'assets/img/projekti/skver44.png',
-        alt: 'Skver 44',
-        naslov: 'Skver 44',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat doloribus neque pariatur.',
-        tech: ['Bootstrap','PHP'],
+        id: 10,
+        src: 'assets/img/projekti/laravel_blog.png',
+        alt: 'Laravel Blog',
+        naslov: 'Laravel Blog',
+        desc: 'Used Teleport public API for searching and displaying info about the cities and quality of life among them',
+        tech: ['MVC','Laravel','MySQL'],
         links: {
-          domain: 'http://skver44.rs/',
-          // code: 'www.cao1.com'
-        }
-      },
-      {
-        id: 5,
-        src: 'assets/img/projekti/blizu.png',
-        alt: 'Blizu Restobar',
-        naslov: 'Blizu Restobar',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat doloribus neque pariatur.',
-        tech: ['Bootstrap','PHP'],
-        links: {
-          domain: 'http://blizu.rs/',
-          // code: 'www.cao1.com'
-        }
-      },
-      {
-        id: 6,
-        src: 'assets/img/projekti/galaxy.png',
-        alt: 'The Evolution of S',
-        naslov: 'The Evolution of S',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat doloribus neque pariatur.',
-        tech: ['Bootstrap'],
-        links: {
-          domain: 'https://njevric.github.io/galaxy-telefoni/index.html',
-          code: 'https://github.com/NJevric/galaxy-telefoni'
-        }
-      },
-      {
-        id: 7,
-        src: 'assets/img/projekti/portfolio1.png',
-        alt: 'Portfolio First Version',
-        naslov: 'Portfolio 1st v.',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat doloribus neque pariatur.',
-        tech: ['HTML','Sass','XML'],
-        links: {
-          domain: 'https://njevric.github.io/portfolio1/',
-          code: 'https://github.com/NJevric/portfolio1'
+          domain: 'https://njevric.github.io/urban-info',
+          code: 'https://github.com/NJevric/urban-info'
         }
       }
+      
     ];
     // console.log(projekat);
     let ispis = (data) => {
   
       let html=``;
-  
-      for(let i of data){
-        console.log(i);
+
+      let arrProjektiDesc = data.reverse();
+
+      for(let i of arrProjektiDesc){
+
         html += 
+            `
+            <div class="project">
+              <div class="slika">
+                  <img src="${i.src}" alt="${i.alt}" data-id="${i.id}" alt="${i.naslov}"/>
+                  <a href="${i.links.domain}"></a>
+                  <div class="projekatTekstReponsive">
+                    <h4>${i.naslov}</h4>
+                    <div class="description">
+                        <p>${i.desc}</p>
+                        <ul>
+                        `
+                        for(let j of i.tech){
+                          html+=`<li>${j}</li>`;
+                        }
 
-      `
-      <div class="project">
-      <div class="slika">
-          <img src="${i.src}" alt="${i.alt}" data-id="${i.id}" alt="${i.naslov}"/>
-          <a href="${i.links.domain}"></a>
-      </div>
-      <div class="projekatTekst">
-          <h4>${i.naslov}</h4>
-          <div class="description">
-              <p>${i.desc}</p>
-              <ul>
-              `
-              for(let j of i.tech){
-                html+=`<li>${j}</li>`;
-              }
+                        html+=`
+                        </ul>
+                    </div>
+                    <div class="linkoviResponsive">
+                        <a href="${i.links.code}" class="button">Github Repo</a>
+                        <a href="${i.links.domain}" class="button">Check it out</a>
+                    </div>
+                  </div>
+              </div>
+              <div class="projekatTekst">
+                  <h4>${i.naslov}</h4>
+                  <div class="description">
+                      <p>${i.desc}</p>
+                      <ul>
+                      `
+                      for(let j of i.tech){
+                        html+=`<li>${j}</li>`;
+                      }
 
-              html+=`
-              </ul>
-          </div>
-          <div class="linkovi">
-              <a href="${i.links.domain}" class="button">Github Repo</a>
-              <a href="${i.links.domain}" class="button">Check it out</a>
-          </div>
-      </div>
-      
-      
-      
-  </div>
-      `
-      
-      ;
+                      html+=`
+                      </ul>
+                  </div>
+                  <div class="linkovi">
+                      <a href="${i.links.code}" class="button">Github Repo</a>
+                      <a href="${i.links.domain}" class="button">Check it out</a>
+                  </div>
+              </div>
+            </div>
+            `
+        ;
       
       }
       document.getElementById('projects').innerHTML=html;
-  
-  
+
     }
-    console.log(projekat);
+    
+    // console.log(projekat);
     ispis(projekat);
       
     }
@@ -416,21 +469,21 @@ window.onload=function(){
     }
   }
   
-  let jezici = () => {
+  let myKnowledge = (arr,p,klasa) => {
     try{
-      let arrJezici = ['HTML5 / Bootstrap', 'CSS3 / Sass', 'Javascript(ES6)/ jQuery / Angular', 'PHP / Laravel', 'SQL, MySQL', 'ASP.NET'];
-      let html = '<ul>';
-      for(let i of arrJezici){
+      let niz = arr;
+      let html = `${p}<ul>`;
+      niz.forEach(i => {
         html +=`<li><div class="techIconList"></div>${i}</li>`;
-      }
+      })
       html+=`</ul>`;
-      document.querySelector('.lista').innerHTML=html;
+      document.querySelector(klasa).innerHTML=html;
     }
     catch(err){
       console.log(err);
     }
   }
-  
+ 
   
   let socials = () => {
     try{
