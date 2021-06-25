@@ -1034,6 +1034,7 @@ header, main, #page,
   }
   main #work #projects .project .slika:hover {
     margin-top: 30px;
+    margin-bottom: 30px;
   }
   main #work #projects .project .slika:hover .projekatTekstReponsive {
     display: block;
