@@ -3,6 +3,7 @@ Second version portfolio (built for learning purpose and improving self knowledg
 <br/>
 <br/>
 Added Javascript for functionality and JSON for easier management of projects data. 
+<br/>
 I started using SCSS for easier maintenance
 <br/>
 <br/>
