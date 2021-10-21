@@ -3,11 +3,12 @@ Second version portfolio (built for learning purpose and improving self knowledg
 <br/>
 <br/>
 Added Javascript for functionality and JSON for easier management of projects data. 
+I started using SCSS for easier maintenance
 <br/>
 <br/>
 Motivation for design is my first portfolio. 
 <br/>
 I'll keep this design direction until i have fully finished portfolio project ready to host and keep it as my signature
-I started using SCSS for easier maintenance
+
 ## Link to website
 https://njevric.github.io/portfolio_final
